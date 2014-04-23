@@ -5,37 +5,33 @@
 <link href="stylesheets/dbc1.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
 </head>
 
-<body>
-<h1>Hi.</h1>
-<h2>I'm Gannon.</h2>
-<h3 id="demo">I live in testagain.</h3>
-<h4>But I'm starting DevBootcamp.</h4>
-<h5>So I'll be in San Francisco soon.</h5>
-<h6>Goodbye Space Needle. Hello Golden Gate Bridge.</h6>
-
-
 <script>
-var x = location.host;
-document.getElementById("demo").innerHTML=x;
-if (location.host == null)
+if (location.host == "")
 	{
-	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
 	}
 </script>
 
+<body>
+<h1>Hi.</h1>
+<h2>I&rsquo;m Gannon.</h2>
+<h3 id="demo">I live in Seattle.</h3>
+<h4>But I&rsquo;m starting DevBootcamp.</h4>
+<h5>So I&rsquo;ll be in San Francisco soon.</h5>
+<h6>Goodbye Space Needle. Hello Golden Gate Bridge.</h6>
 
+<p>I&rsquo;m a <b>freelance graphic designer,</b> but at various times over the years I&rsquo;ve had to figure out how to program. Mostly in silly languages, like that weird scripting junk that ancient old Macromedia Director used.<br>Kinda lame.</p>
 
-<p>I'm a <b>freelance graphic designer,</b> but at various times over the years I've had to figure out how to program. Mostly in silly languages, like that weird scripting junk that ancient old Macromedia Director used.<br>Kinda lame.</p>
+<p>So now, I&rsquo;ve said goodbye to all my clients, and I&rsquo;m closing up shop to head south and learn to program for real. With real languages. Like Ruby. That&rsquo;s exciting.<br><span id="dontfreakout">(And kinda freaky.)</span></p>
 
-<p>So now, I've said goodbye to all my clients, and I'm closing up shop to head south and learn to program for real. With real languages. Like Ruby. That's exciting.<br><span id="dontfreakout">(And kinda freaky.)</span></p>
-
-<p>This web page is actually part of an exercise. So I've already started! Since I'm supposed to have several paragraphs, allow me to introduce my old friend Lorem Ipsum. It's what designers use when there isn't anything real to say:</p>
+<p>This web page is actually part of an exercise. So I&rsquo;ve already started! Since I&rsquo;m supposed to have several paragraphs, allow me to introduce my old friend Lorem Ipsum. It&rsquo;s what designers use when there isn&rsquo;t anything real to say:</p>
 
 <p class="lightertype">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 <p>If for some reason, you like lorem ipsum, you can grab it from this <a href="http://www.lipsum.com" target="_blank">Lorem Generator</a>.</p>
 
-<p>You can <a href="mailto:betterdont@null.com?Subject=You%20didn't%20really%20think%20you%20were%20going%20to%20get%20to%20scrape%20that%20did%20you?">email me</a>, or see what I've been doing for the past 15 years at <a href="http://gannoncurran.com" target="_top">gannoncurran.com</a>. Here's a taste:</p>
+<p>You can <a href="mailto:betterdont@null.com?Subject=You%20didn't%20really%20think%20you%20were%20going%20to%20get%20to%20scrape%20that%20did%20you?">email me</a>, or see what I&rsquo;ve been doing for the past 15 years at <a href="http://gannoncurran.com" target="_top">gannoncurran.com</a>. Here&rsquo;s a taste:</p>
 
 <p><img src="images/alaska.png"><img src="images/grams.png"><a href="http://gannoncurran.com/lowfi_nff.html" target="_blank"><img src="images/oldsoandso.png"></p></a>
 
