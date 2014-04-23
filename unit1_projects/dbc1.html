@@ -8,10 +8,22 @@
 <body>
 <h1>Hi.</h1>
 <h2>I'm Gannon.</h2>
-<h3>I live in Seattle.</h3>
+<h3 id="demo">I live in testagain.</h3>
 <h4>But I'm starting DevBootcamp.</h4>
 <h5>So I'll be in San Francisco soon.</h5>
 <h6>Goodbye Space Needle. Hello Golden Gate Bridge.</h6>
+
+
+<script>
+var x = location.hostname;
+document.getElementById("demo").innerHTML=x;
+if (location.host == 'localhost')
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')
+	}
+</script>
+
+
 
 <p>I'm a <b>freelance graphic designer,</b> but at various times over the years I've had to figure out how to program. Mostly in silly languages, like that weird scripting junk that ancient old Macromedia Director used.<br>Kinda lame.</p>
 
