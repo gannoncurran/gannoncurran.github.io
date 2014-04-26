@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Raleway:800,400);
+
+body {
+	background: #FAFAFA url("../images/00_bg_dot.gif");
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Raleway', 'sans-serif';
+	font-size: 18px;
+	line-height: 1.4;
+	}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Raleway', 'serif';
+	font-weight: 800;
+	color: #666;
+	}
+
+h1 {
+	font-size: 50px;
+	}
+
+h2 {
+	font-size: 20px;
+	font-weight: 400;
+	}
+
+h3 {
+	font-size: 30px;
+	font-weight: 800;
+	}
+
+h5 {
+	text-transform: uppercase;
+	}
+
+p {
+	margin: 0px 0px;
+	padding: 0px;
+	}
+
+a img {
+	border: none;
+	}
+
+a:link {
+	color: #F38900;
+	text-decoration: none;
+	}
+
+a:visited {
+	color: #F38900;
+	}
+
+a:hover, a:active, a:focus {
+	color: #F38900;                                                                                              
+	text-decoration: underline;
+	}
+
+img {
+	margin: 0px 25px 0px 0px;
+	padding: 0px;
+	}
+
+
+ul, ol, li {
+	color: #555;
+	font-size: 18px;
+	line-height: 1.4;
+	}
+
+.lightgray {
+	color: #ccc;
+	}
+
+#container {
+	width: 1000px;
+	padding: 50px;
+	margin: 0 auto;
+	background-color: #FFF;
+	}
+
+#header {
+	margin: 0px;
+	padding: 0px 0px 15px 0px;
+	}
+
+#content {
+	margin: 0px 0px 100px 0px;
+	padding: 50px 0px 0px 0px;
+	border-top: 5px solid #F38900;
+	width: 700px;
+	float: left;
+	}
+
+#content p {
+	margin: 17px 0px;
+	line-height: 27px;
+	}
+
+#entrynum {
+	font-weight: 800;
+	font-size: 38px;
+	color: #CCC;
+	}
+
+#date {
+	font-weight: 400;
+	font-size: 16px;
+	margin: 0px 0px 0px 20px;
+	color: #BBB;
+	}
+
+#tags {
+	text-transform: uppercase;
+	color: #999;
+	font-size: 14px;
+	}
+
+#sidebar {
+	float: right;
+	width: 250px;
+	margin: 0px 0px;
+	padding: 50px 0px 0px 0px;
+	border-top: 5px solid #F38900;
+	}
+
+#sidebar p {
+	font-size: 14px;
+	}
+
+#sidebar li {
+	font-size: 14px;
+	margin: 0px 0px 7px 0px;
+	padding-bottom: 8px;
+	border-bottom: 1px dotted #CCC;
+	}
+
+#sidebar li:last-child {
+	border-bottom: 1px solid #CCC;
+	}
+
+#sidebar li:first-child {
+	border-top: 1px solid #CCC;
+	padding-top: 8px;
+	}
+
+#footer {
+	clear: both;
+	padding: 20px 0px;
+	border-top: 5px solid #DDD;
+	}
+
+#footer p {
+	font-size: 16px;
+	}
+
+ul {
+	list-style: none;
+	padding: 0px;
+	margin: 10px 0px 30px 0px;
+	}
+
+.lightgray {
+	color: #CCC;
+	}
+
+#sidebar .lightgray {
+	color: #BBB;
+}
+
+
+
+
+
