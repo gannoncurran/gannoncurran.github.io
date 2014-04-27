@@ -81,7 +81,7 @@ ul, ol, li {
 
 #container {
 	width: 1000px;
-	padding: 50px;
+	padding: 75px 50px 50px 50px;
 	margin: 0 auto;
 	background-color: #FFF;
 	}
@@ -90,6 +90,15 @@ ul, ol, li {
 	margin: 0px;
 	padding: 0px 0px 15px 0px;
 	}
+
+#nav p {
+	color: #BBB;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 90%;
+	position: absolute;
+	top: 5px;
+}
 
 #content {
 	margin: 0px 0px 100px 0px;
@@ -185,6 +194,10 @@ ul, ol, li {
 	color: #F38900;                                                                                              
 	}
 
+#sidebar .lightgray {
+	color: #BBB;
+	}
+
 #footer {
 	clear: both;
 	padding: 20px 0px;
@@ -205,9 +218,10 @@ ul {
 	color: #CCC;
 	}
 
-#sidebar .lightgray {
-	color: #BBB;
+.smallcaps {
+	font-size: 75%;
 }
+
 
 
 
