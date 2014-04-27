@@ -32,6 +32,10 @@ h3 {
 	font-weight: 800;
 	}
 
+h4 {
+	margin: 50px 0px 0px 0px;
+	}
+
 h5 {
 	text-transform: uppercase;
 	}
@@ -113,6 +117,27 @@ ul, ol, li {
 	color: #BBB;
 	}
 
+#featureimg {
+	margin: 26px 0px;
+	border: 0px;
+	width: 425px;
+	height: 318px;
+	position: relative;
+	}
+
+#featureimg p {
+	height: 35px;
+	width: 404px;
+	font-size: 14px;
+	line-height: 17px;
+	color: #FFF;
+	margin: 0px;
+	padding: 10px 10px 10px 10px;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0px;
+	}
+
 #tags {
 	text-transform: uppercase;
 	color: #999;
@@ -145,6 +170,19 @@ ul, ol, li {
 #sidebar li:first-child {
 	border-top: 1px solid #CCC;
 	padding-top: 8px;
+	}
+
+#sidebar a:link {
+	color: #555;
+	text-decoration: none;
+	}
+
+#sidebar a:visited {
+	color: #555;
+	}
+
+#sidebar a:hover, a:active, a:focus {
+	color: #F38900;                                                                                              
 	}
 
 #footer {
