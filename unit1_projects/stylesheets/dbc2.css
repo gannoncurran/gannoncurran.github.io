@@ -34,6 +34,7 @@ h3 {
 
 h4 {
 	margin: 50px 0px 0px 0px;
+	font-size: 24px;
 	}
 
 h5 {
@@ -64,7 +65,7 @@ a:hover, a:active, a:focus {
 	}
 
 img {
-	margin: 0px 25px 0px 0px;
+	margin: 0px 0px 0px 0px;
 	padding: 0px;
 	}
 
@@ -126,25 +127,26 @@ ul, ol, li {
 	color: #BBB;
 	}
 
-#featureimg {
+#content .featureimg {
 	margin: 26px 0px;
-	border: 0px;
+	padding: 0px;
 	width: 425px;
-	height: 318px;
 	position: relative;
+	background-color: #EEE;
+	line-height: 0px;
 	}
 
-#featureimg p {
-	height: 35px;
-	width: 404px;
+#content .featureimg p {
+	width: 405px;
 	font-size: 14px;
-	line-height: 17px;
 	color: #FFF;
 	margin: 0px;
 	padding: 10px 10px 10px 10px;
 	background-color: rgba(0,0,0,0.5);
 	position: absolute;
 	top: 0px;
+	line-height: 20px;
+	border: 0px;
 	}
 
 #tags {
