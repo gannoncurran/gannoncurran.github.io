@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC Blog: Wireframing Exercise</title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 2</span><span id="date">| 04.27.2014 |</span></h3>
+			<h3>Wireframe exercise.</h3>
+			<p>A follow up to post no. 1, here are the results of the &ldquo;reverse engineering&rdquo; exercise to generate wireframes for the 3 sites I reviewed.</p>
+			<h4><a href="http://arstechnica.com" target="_blank">ArsTechnica</a></h4>
+			<p></p>
+			<h5>What problem is the web page solving?<br>What visual challenges are there?</h5>
+			<p>The ArsTechnica homepage&rsquo;s main challenge is managing density: there&rsquo;s a <i>ton</i> of info crammed onto this single page. It could easily be overwhelming. The homepage has to give an overview of articles from several content categories, provide site navigation, reveal (or at least hint at) site features and services for users, provide global functions like login and search, make space for advertising &mdash; even cross promote other sites owned by the publishing company. That&rsquo;s a lot. If not handled well, a single page with that much information can seem like an overwhelming wall of data that leaves a user without a clear path of action.</p>
+			<div class="featureimg">
+				<img src="images/featureimg_01.jpg">
+			</div>
+			<div class="featureimg">
+				<img src="images/ars_homepage_wireframe_sm.jpg">
+				<p>Click <a href="http://gannoncurran.com/dbc/images/ars_homepage_wireframe.png" target="_blank">here</a> for the fullsize wireframe.</p>
+			</div>			
+			
+			<h4><a href="http://simple.com" target="_blank">Simple</a></h4>
+			<p></p>
+			<h5>What problem is the web page solving?<br>What visual challenges are there?</h5>
+
+			<p>When a user logs into their account, the web app needs to be immediately useful. Lots of bank sites make you go through a few steps to see your transaction detail. That needs to be streamlined. Simple's answer is to make the transaction history the user "homepage". The resulting visual challenge is how to present lots of data in a clear way. They use a lot of inline feedback to guide users, and carefuly separate top level transaction info from more specific details to keep the clutter down. Specific details are presented dynamically and contextually in a sidebar pane.</p>
+			<div class="featureimg">
+				<img src="images/featureimg_02b.jpg">
+			</div>
+			<div class="featureimg">
+				<img src="images/simple_account_wireframe_sm.jpg">
+				<p>Click <a href="http://gannoncurran.com/dbc/images/simple_account_wireframe.jpg" target="_blank">here</a> for the fullsize wireframe.</p>
+			</div>	
+			
+			<h4><a href="http://ffffound.com" target="_blank">Ffffound</a></h4>
+			<p></p>
+			<h5>What problem is the web page solving?<br>What visual challenges are there?</h5>
+
+			<p>The problem this page appears to tackle is how to present details about an image. This is one level down from the homepage, which is just a "stream" of images, but this detail page doesn't really give much additional info about the image. In reality, the problem this page really tackles is how to provide a dead simple way for site visitors to explore the image collections of other users that have similar interests and tastes. I see two visual challenges here: the first being that this is a site about images, so having a bunch of overdone design and navigation that competes with content would be a negative &mdash; the second is allowing navigation along what are essentially curated "paths" without banging the user over the head about it, and keeping an element of randomness at the same time.</p>
+
+			<div class="featureimg">
+				<img src="images/featureimg_03b.jpg">
+			</div>
+			<div class="featureimg">
+				<img src="images/ffffound_detail_wireframe_sm.jpg">
+				<p>Click <a href="http://gannoncurran.com/dbc/images/ffffound_detail_wireframe.jpg" target="_blank">here</a> for the fullsize wireframe.</p>
+			</div>	
+
+			<p id="tags">#DBC, #Design, #Useablility, #Wireframing, #Ffffound, #Simple, #ArsTechnica</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
