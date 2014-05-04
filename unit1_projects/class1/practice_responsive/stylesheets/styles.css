@@ -258,7 +258,11 @@ and (max-width : 640px) {
   width: 95%;
 }
 
-
+h2 {
+  background-color: rgb(60, 60, 60);
+  color: #FFF;
+  font-size: 1.9em;
+}
 
 
 }
