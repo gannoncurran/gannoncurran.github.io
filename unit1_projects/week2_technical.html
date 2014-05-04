@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC></title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 4</span><span id="date">| 05.04.2014 |</span></h3>
+			<h3>Classes vs. IDs</h3>
+			<p>The general idea with both of these CSS selectors is that they let you add more specific, custom targeting over and above the standard elment selectors. For example, you might have part of your page design that requires a different visual treatment for a paragraph. Classes and IDs can be attached to the HTML element you want to target, and then the CSS file can specify a collection of styles that will apply to only HTML elements that have the associated class or ID.</p>
+			<p>As an example, here's what the HTML would look like if you added a class to a paragraph tag:</p>
+			<p class="snippet">&lt;p class="mynewclass"&gt;The internet was made for cats. They've been waiting and waiting.&lt;/p&gt;</p>
+			<p>And the associated CSS file would then have to contain:</p>
+			<p class="snippet">.mynewclass {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;color: pink;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;font-family: cursive;<br>
+			}</p>
+			<p>Adding an ID works pretty much the same way, but with a different term / symbol combination:</p>
+			<p class="snippet">&lt;p id="mynewid"&gt;The internet was made for cats. They've been waiting and waiting.&lt;/p&gt;</p>
+			<p>And the associated CSS file would then have to contain:</p>
+			<p class="snippet">#mynewid {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;color: pink;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;font-family: cursive;<br>
+			}</p>
+			<p>So, use class="something" in your HTML and a period in the CSS for classes and id="something" and a pound sign for IDs.</p>			<p>What's the difference? Why wouldn't you just use IDs for everything? The main difference between classes and IDs is that an ID can only be used <i>once</i> in an HTML document, but classes can be reused. So you could have lots of different paragraphs that used a class tag, but only one paragraph could use any particular ID.</p>
+			<p>Because of their specificity, IDs are generally used to target a unique component of a page. Like a sidebar, or a navigation bar. You'll often see them used with &lt;div&gt; tags that contain a major page section. The elements contained in the div can then be targeted in the CSS by combining the ID selector and standard HTML element selectors. IDs are also important on pages that use Javascript. The can provide the specificity needed for JS code to target and manipulate the correct page element.</p>
+			<p>Chris Coyier of <a href="http://css-tricks.com/the-difference-between-id-and-class/" target="_blank">CSS-Tricks</a> has a helpful way to understand and remember the difference between classes and IDs: Think of classes like bar codes - you could have lots of items with the same barcode. An ID is more like a serial number - it's unique, and identifies only one thing.</p>
+
+			<p id="tags">#DBC, #CSS, #HTML, #IDs, #Classes</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+				<li><span class="lightgray">No. 4&nbsp;&nbsp;&nbsp;| 05.04.2014 |</span><br><a href="week2_technical.html" target="_top">Classes vs. IDs</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
