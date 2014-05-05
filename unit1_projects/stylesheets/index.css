@@ -80,16 +80,31 @@ ul, ol, li {
 	color: #ccc;
 	}
 
-#container {
-	width: 1000px;
-	padding: 75px 50px 50px 50px;
-	margin: 0 auto;
-	background-color: #FFF;
-	}
-
 #header {
 	margin: 0px;
 	padding: 0px 0px 15px 0px;
+	}
+
+#flipboard {
+	margin: 70px 0px 0px 0px;
+}
+
+#flipboard img {
+	position: relative;
+	left: -10px;
+
+}
+
+#container {
+	width: 100%;
+	background-color: #fff;
+	}
+
+.subcontainer {
+	width: 1000px;
+	padding: 0px 50px 50px 50px;
+	margin: 0 auto;
+	/*background-color: #FFF;*/
 	}
 
 #nav p {
@@ -210,10 +225,16 @@ ul, ol, li {
 	font-size: 16px;
 	}
 
-ul {
+#sidebar ul {
 	list-style: none;
 	padding: 0px;
 	margin: 10px 0px 30px 0px;
+	}
+
+#content ul {
+list-style: none;
+padding: 0px;
+margin: 10px 0px 30px 0px;
 	}
 
 .lightgray {
@@ -222,7 +243,14 @@ ul {
 
 .smallcaps {
 	font-size: 75%;
-}
+	}
+
+.gline {
+	width: 700px;
+	margin: 75px 0px 0px 0px;
+	padding: 20px 0px 0px 0px;
+	border-top: 5px solid #DDD;
+	}
 
 #content p.snippet {
 	background-color: #f5f5f5;
