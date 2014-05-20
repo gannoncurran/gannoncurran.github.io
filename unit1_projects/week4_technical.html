@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC Blog</title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 7</span><span id="date">| 05.20.2014 |</span></h3>
+			<h3>Enumerable#cycle</h3>
+			<p>Typically, I get to my technical and cultural blog assignments mid week. Last week, however, things got away from me a bit and I put the blogging exercises off until last. It turns out to have been a poor choice. Knowing about "Enumerable" would have really helped as I was working on the creative challenge: Make an Accountability Group Creator.</p>
+			<p>Enumerable is a "mixin" that "provides collection classes with several traversal and searching methods, and with the ability to sort". When I was working on my group maker, I wrote a whole big chunk of nested, looping code to rearrange group members. If I'd know about Eneumerable, I would have saved myself a lot of grief.</p>
+			<p>Enumerable adds on top of the built in array methods (like .rotate) to provide a whole additional toolkit full of fun stuff. One of the options for this blog assignment was to pick one of a selection of Enumerable methods, learn about it, and then write about it. So, ok everybody... meet Enumerable#cycle.</p>
+			<p>.cycle is pretty slick &mdash; and kinda dangerous. Fun! Get ready to kill process y'all.</p>
+			<p>When you call cycle on an array or hash, it returns one element at a time, in order of index number. When it gets to the end, it starts over at the beginning. You can specify an optional argument to control how many times cycle does its thing, and you can also (optionally) provide a block of code that cycle will pass the contents of each element into. Like this:</p>
+			<p class="snippet">array_of_some_stuff = [1, 2, 3, 4, 5]<br>array_of_some_stuff.cycle(2) { |x| print x }</p>
+			<p>You'll get: 1234512345</p>
+			<p>So here's the dangerous part: If you don't specify a limiting number in that parameter spot, or include some logic in your block that causes a break at some point, .cycle will repeat <i>forever.</i></p>
+			<p class="snippet">[1, 2, 3].cycle</p>
+			<p>Equals equals badness. Imagine the sound of a chainsaw. The above example gets you jammed up code, freaking out Ruby processes, and probably a hot laptop. If you want to experiment with .cycle, consider having Activity Monitor at the ready. If irb stops responding, and control-c doesn't help, you can jump into Activity Monitor, click the CPU tab, decend sort by %CPU to find ruby, then force quit it. (I had to do this, even after force quitting Terminal. A few times actually.)</p>
+			<p>Now some neat stuff you can do with .cycle &mdash; Let's make an array:</p>
+			<p class="snippet">moods = ['blah', 'jacked', 'pumped', 'grumpin', 'whatever']</p>
+			<p>Now, let's say you're a moody, but predictable kind of person. Always changing your mind about how you feel, but orderly about it. You always go from "pumped" to "grumpin". (And so on and so forth.)</p>
+			<p>You can actually call .cycle on an array object, and then "store" that in another object:</p>
+			<p class="snippet">in_the_moment = moods.cycle</p>
+			<p>So now in_the_moment contains this ordered, forever repeating loop of elements from moods. (Don't worry &mdash; <i>this</i> scheme isn't running a constant infinite loop in the background. The contained moods.cycle sits quietly until it's needed.)</p>
+			<p>Now watch what happens when you use the .next method on in_the_moment:</p>
+			<p class="snippet">9.times { print "#{in_the_moment.next} " }</p>
+			<p>You get: blah jacked pumped grumpin whatever blah jacked pumped grumpin</p>
+			<p>That. Is. Neat. An easy way to keep track of and return ordered, repeating items. Days of the week anyone?</p>
+			<p>As I was researching .cycle, I found <a href="http://www.sitepoint.com/guide-ruby-collections-iii-enumerable-enumerator/" target="_blank">clever</a> <a href="http://www.globalnerdy.com/2008/07/06/enumerating-enumerable-enumerablecycle/" target="_blank">examples</a> of stuff it could be used for, but some of them didn't work for me, and caused ruby to drop into never never land. I suspect this has to do with the way .cycle's implementation has changed with different ruby versions. Which is another reason why .cycle should be used with caution: if you don't have all the details right, it could bite you.</p>
+			<p id="tags">#DBC, #Ruby, #Enumerable, #.cycle, #InfiniteLoops</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+				<li><span class="lightgray">No. 4&nbsp;&nbsp;&nbsp;| 05.04.2014 |</span><br><a href="week2_technical.html" target="_top">Classes vs. IDs</a></li>
+				<li><span class="lightgray">No. 5&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_technical.html" target="_top">Why is JavaScript so popular in Web Development?</a></li>
+				<li><span class="lightgray">No. 6&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_cultural_blog.html" target="_top">My response to Shereef's Fireside Chat.</a></li>
+				<li><span class="lightgray">No. 7&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_technical.html" target="_top">Enumerable#cycle</a></li>
+				<li><span class="lightgray">No. 8&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_cultural_blog.html" target="_top">Dealing with Conflict</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
