@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC Blog</title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 9</span><span id="date">| 05.28.2014 |</span></h3>
+			<h3>Modeling Stuff Using Ruby Classes.</h3>
+			<p>Crap.</p>
+			<p>This blog is super late. <i>Again.</i></p>
+			<p>This week (uh, I mean <i>last week</i>) we were asked to pick something we'd like to model and show how to do it with Ruby classes, methods and instance variables.</p>
+			<p>While my first impulse, "Shame Meter!" would surely be hilarious, how about something more positive and productive? A time management tool.</p>
+			<p>Ideally, I'd like to input tasks that have to get done during the week, and a time estimate of how long each task will take. I want my time manager to break up big tasks and distribute them in chunks of time across the days of the week. Then it could tell me what I should be working on each day, and as I do stuff, track by task how much of the allotted day's time I've used, and warn me if I'm getting off track.</p>
+			<p>I've been reading <i>Practical Object-Oriented Design in Ruby</i> (aka POODR) by Sandi Metz. I really like it, and I'm going to try and follow some of her recommendations for object oriented design. To the best of my still-fairly-meager ability.</p>
+			<p>First and foremost? Make sure each class has a <i>single responsibility.</i></p>
+			<p>So I have to think specifically about what parts a time manager will need, and then how to translate and organize those parts into classes that are as focused as possible.</p>
+			<p>I'll probably need classes like "Week", "Timer", "Notifier", "Day", and maybe things like a "DayScheduler" that would break the weekly task time estimates across days. In truth, I'm overwhelmed by the whole animal, so I'm going to start small. I'm <i>pretty</i> sure I'll need a class like this:</p>
+			<h5>Knows the following stuff about itself:</h5>
+			<p>- The task name.<br>
+				- The amount of time this task has been allotted for the day.<br>
+				- How much time is left for completion.<br>
+				&nbsp;&nbsp;&nbsp;(This could maybe be a negative value if I've gone over time.)<br>
+				- If it's an active task.<br>
+				&nbsp;&nbsp;&nbsp;(i.e. is it being worked on right now or ignored?)</p>
+			<h5>Can do the following stuff:</h5>
+			<p>- Report its task name<br>
+				- Report the time allotted for the task for the day<br>
+				- Report how much time is left for the task<br>
+				- Report its active status<br>
+				- Change its active status<br>
+				- If active, decrement the time allotment with a timer.<br>
+				&nbsp;&nbsp;&nbsp;(I feel like this timer should be a separate object?)</p>
+			<P>Oh code that is and does the things above, I shall call you "DayTask". You shall be a class. I hope you shall not suck.</P>
+			<p>Objects have "noun-y" parts, like properties or states, and "verb-y" parts &mdash; which are behaviors, or "actions they can do". The object-creating blueprint that shall be the class "DayTask" will store the things from the "Knows about itself" list in instance variables. The "Can do" stuff will take the form of methods.</p>
+			<p>After a bit of Googling, it seems like timers can be a bit tricky. In order to keep moving forward, I think it would be best if "DayTask" isn't responsible for timing. I don't know how to implement it yet, and besides, that would violate single responsibility too, right? Maybe "DayTask" just needs to record a time stamp when its active state changes. If there's a time history, it can compare that with the current time (which is easy to get in Ruby) and report back a status based on the active state. Some external object could then be responsible for occasionally asking, "Hey instance of DayTask, how much time remains for your task?" If the task has been inactive, it would respond with "Same as the last time you asked (sheesh)." If it's been active, it can calculate how much time has passed since it got activated, decrement that from the time remaining and report back.</p>
+			<p>That means I'm going to need one more instance variable: One that can hold the last known time the instance was set to active. And since it's easy, I'll update that variable when the instance gets set to inactive too, because I can already think of 3 possibilities that might need that info. Hopefully that doesn't count too much as "trying to guess the future", which according to POODR is a bad idea.)</p>
+			<p>So here's what this "DayTask" class might look like:</p>
+			<div class="featureimg">
+				<img src="images/daytask_inpage.gif">
+				<p>Click <a href="https://www.dropbox.com/s/vpcntnrbdarqu6s/daytask.gif" target="_blank">here</a> for the full size code screenshot.</p>
+			</div>
+			<p>I can already see both my methods are probably violating the "Do only one thing" rule of thumb. The "active" method is esentially flipping a switch to turn time tracking on or off, but it's <i>also recording the time a switch flip happens.</i> The "time_remaining" method is doing that secondary task of time stamping as well. Right now that's probably not a big deal, but since the only-one-thing rule applies to methods too, it's probably not the best design.</p>
+			<p>That time stamping action could be broken out into its own method. Then the "active" and "time_remaining" methods could call the time stamp method, and it would make it easier to change the stamping system later, if need be. Perhaps from a single value to an array or hash containing a history of time-stamped state changes &mdash; which would be necessary if I wanted, someday, to implement some kind of "FillOutMyTimeSheet" functionality.</p>
+			<p>I'd make that change, but look! I'm out of time.</p>
+
+			<p id="tags">#DBC, #Classes, #OOD, #POODR</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+				<li><span class="lightgray">No. 4&nbsp;&nbsp;&nbsp;| 05.04.2014 |</span><br><a href="week2_technical.html" target="_top">Classes vs. IDs</a></li>
+				<li><span class="lightgray">No. 5&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_technical.html" target="_top">Why is JavaScript so popular in Web Development?</a></li>
+				<li><span class="lightgray">No. 6&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_cultural_blog.html" target="_top">My response to Shereef's Fireside Chat.</a></li>
+				<li><span class="lightgray">No. 7&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_technical.html" target="_top">Enumerable#cycle</a></li>
+				<li><span class="lightgray">No. 8&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_cultural_blog.html" target="_top">Dealing with Conflict</a></li>
+				<li><span class="lightgray">No. 9&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_technical.html" target="_top">Modeling Stuff Using Ruby Classes.</a></li>
+				<li><span class="lightgray">No. 10&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_cultural_blog.html" target="_top">Breaking Up the Sausagefest.</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
