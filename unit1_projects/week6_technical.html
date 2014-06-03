@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC Blog</title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 11</span><span id="date">| 06.03.2014 |</span></h3>
+			<h3>Functional OOP.</h3>
+			<p>Answering this question took me a while. There was some sorting out to do. I&rsquo;m starting to get my head wrapped around this, but be warned, gentle reader &mdash; grain of salt.</p>
+			<h5>Functional, Procedural, Imperative, Declarative, OOP. What?</h5>
+			<p>There&rsquo;s a Venn diagram here. Let&rsquo;s start with two big separate circles &mdash; umbrella categories that describe broad programming paradigms. Imperative vs. Declarative.</p>
+			<p>Imperative languages are like a recipe or a to-do list &mdash; a set of instructions that describe <i>how</i> to get a result. BASIC is one example of a language that fits in this category.</p>
+			<p>In contrast, declarative languages describe <i>what</i> you want as a result, and it&rsquo;s the computer&rsquo;s job to figure out the how. The HTML that defines a web page, or a spreadsheet with cells of formulas are examples of this. (So is SQL, apparently.) Declarative languages are generally described as &ldquo;higher level&rdquo; than imperative &mdash; there are more layers of abstraction between the programmer and the machine hardware.</p>
+			<p>Functional languages are a subset of the declarative category. The code is often structured like mathematical equations or functions. Many functional languages are &ldquo;impure&rdquo;, meaning they contain some imperative features, but Haskell is one oft-cited example of a &ldquo;pure&rdquo; functional language.</p>
+			<p>Any googling on imperative and declarative languages will quickly turn up references to &ldquo;state&rdquo; and &ldquo;side-effects&rdquo;. Wikipedia here we come: <a href="http://en.wikipedia.org/wiki/State_(computer_science)#Program_state" target="_blank">State.</a> <a href="http://en.wikipedia.org/wiki/Side_effect_(computer_science)" target="_blank">Side-Effects.</a></p>
+			<p>Imperative languages are <i>all</i> about side effects. Functional languages generally avoid them. I find the recipe / spreadsheet examples helpful here. As you move through the kitchen, you can see things changing over time, and state and order matter. (You can&rsquo;t cook an omelette before you scramble the eggs.) A spreadsheet, once you specify all the &ldquo;whats&rdquo; &mdash; the cell values and functions &mdash; is Bam. Done. Changing one value changes all the values in linked cells at once. It&rsquo;s really just one big single equation, despite being broken into smaller visible parts. How the computer is figuring out the answer to that big equation? Not your concern.</p>
+			<h5>Now for the object-oriented part: Ruby.</h5>
+			<p>Ruby is actually considered a <i>multi-paradigm</i> language. It&rsquo;s generally imperative in form, and uses object-orientation as the model of organization for its imperativeness. But it also includes functional components &mdash; like map and reduce. You could write a set of instructions in Ruby that describe, step by step, how to loop through an array and do something to each element. Or you could just call map. Bam. Done.</p>
+			<p>It was interesting to see the (oh, of course there is) debate around internet town about the heavenliness or stanky-evil-ness of the different programming paradigms. Generally, it seems to me like most things: it depends on the context, the task at hand, and programmer skill. It&rsquo;s less about the particular tool and more about how it&rsquo;s being used.</p>
+			<p>I did appreciate explanations of how functional programming is beneficial in contexts where parallelization is important. (i.e. Multi-core processors, or that giant Cloud thing people won&rsquo;t shut up about.) The lower level &ldquo;how&rdquo; can change under the functional code without much impact.</p>
+			<p>While Ruby isn&rsquo;t considered a functional language per se, there are <a href="https://code.google.com/p/tokland/wiki/RubyFunctionalProgramming#Functional_programming_in_Ruby" target="_blank">techniques</a> to code in a functional style in Ruby. For some tasks this may improve the quality of code. It&rsquo;s nice to find that tool in the toolkit.</p>
+
+			<p id="tags">#DBC, #ProgrammingParadigms, #Functional #OO</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+				<li><span class="lightgray">No. 4&nbsp;&nbsp;&nbsp;| 05.04.2014 |</span><br><a href="week2_technical.html" target="_top">Classes vs. IDs</a></li>
+				<li><span class="lightgray">No. 5&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_technical.html" target="_top">Why is JavaScript so popular in Web Development?</a></li>
+				<li><span class="lightgray">No. 6&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_cultural_blog.html" target="_top">My response to Shereef's Fireside Chat.</a></li>
+				<li><span class="lightgray">No. 7&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_technical.html" target="_top">Enumerable#cycle</a></li>
+				<li><span class="lightgray">No. 8&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_cultural_blog.html" target="_top">Dealing with Conflict</a></li>
+				<li><span class="lightgray">No. 9&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_technical.html" target="_top">Modeling Stuff Using Ruby Classes.</a></li>
+				<li><span class="lightgray">No. 10&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_cultural_blog.html" target="_top">Breaking Up the Sausagefest.</a></li>
+				<li><span class="lightgray">No. 11&nbsp;&nbsp;&nbsp;| 06.03.2014 |</span><br><a href="week6_technical.html" target="_top">Functional OOP.</a></li>
+				<li><span class="lightgray">No. 12&nbsp;&nbsp;&nbsp;| 06.03.2014 |</span><br><a href="week6_cultural_blog.html" target="_top">Stereotype Threat.</a></li>
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
