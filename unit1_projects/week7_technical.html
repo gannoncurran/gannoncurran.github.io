@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gannon Curran: DBC Blog</title>
+<link href="stylesheets/dbc2.css" rel="stylesheet" type="text/css" media="screen" charset="utf-8">
+</head>
+
+<script>
+if (location.host == "")
+	{
+	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>');
+	console.log("liverefresh is active");
+	}
+</script>
+
+<body>
+	<div id="container">
+
+		<div id="header">
+			<h1>g.curran<span class="lightgray">/DBC</span></h1>
+			<h2>A boot&rsquo;s blog.</h2>
+			<div id="nav">
+				<p><a href="../index.html" target="_top">&laquo; <span class="smallcaps">Return to Index</span></a></p>
+			</div>
+		</div>
+
+		<div id="content">
+			<h3><span id="entrynum">no. 13</span><span id="date">| 06.06.2014 |</span></h3>
+			<h3>SQL Injections.</h3>
+			<p>As a beginning coder, this kind of stuff freaks me out. SQL Injections are one of many security issues that software developers have to be on top of. SQL Injection is seriously old school, but it turns lots of websites are still vulnerable to this style of exploit. If experienced programmers are slipping up on this, what chance do I stand?</p>
+			<p>After doing a bit of research, there are at least a couple of places to start. The first is awareness. Knowing SQL Injections exist, and knowing the basics of how they work is helpful, and that leads to a couple of &ldquo;best practices&rdquo; that I can try to turn into regular habits.</p>
+			<p>So, first, what is SQLi?</p>
+			<p>One of the fundamental purposes of a web-based application is to serve as an interface between the end user and some kind of data. Applications take requests from users like, &ldquo;make a new user account for me&rdquo;, &ldquo;show me a list of products&rdquo;, &ldquo;show me my recent transactions&rdquo;, &ldquo;show me some photos&rdquo;, etc.. Fulfilling these requests means interacting with a database, which almost always means using SQL.</p>
+			<p>The &ldquo;path from user to web app&rdquo; often goes through a field on a web page. A &ldquo;create account&rdquo; page would have a field where you&rsquo;d type in your hoped-for username. A product page might have a search field that gets user input like &ldquo;skinny jeans&rdquo; or &ldquo;creamed corn&rdquo;. Our apps pull that user-provided input into SQL queries and send them on to a DBMS that will return relevant data from, or make changes to a database.</p>
+			<p>The security risk comes when a user puts a carefully crafted string into an input field (or tacks the right stuff onto the end of an http request) that when shoved into an SQL query by an app, changes the SQL query. Usually to something bad for the other users of the app.</p>
+			<p>Here&rsquo;s an <a href="http://en.wikipedia.org/wiki/SQL_injection" target="_blank">example</a>  (thanks Wikipedia):</p>
+			<blockquote><p><b>statement = "SELECT * FROM users WHERE name ='" + userName + "';"</b></p>
+			<p><i>This SQL code is designed to pull up the records of the specified username from its table of users. However, if the "userName" variable is crafted in a specific way by a malicious user, the SQL statement may do more than the code author intended. For example, setting the "userName" variable as:</i></p>
+			<p><b>' or '1'='1</b></p>
+			<p><i>renders one of the following SQL statements by the parent language:</i></p>
+			<p><b>SELECT * FROM users WHERE name = '' OR '1'='1';</b></p>
+			<p><i>If this code were to be used in an authentication procedure then this example could be used to force the selection of a valid username because the evaluation of '1'='1' is always true.</i></p></blockquote>
+			<p>There are other SQLi tactics that can be used to return the entire contents of a database using that same <i>&lsquo; or &lsquo;1&rsquo; = &lsquo;1&nbsp;</i> trick. Since the OR will always evaluate &ldquo;true&rdquo;, every record will match and get pulled by the DBMS. Even worse? Things like <i>1;DROP TABLE users</i></p>
+			<p>Congratulations asshole user. Your trickery has impressed us all.</p>
+			<p>So what&rsquo;s the takeaway for a novice developer? First, never trust raw user input. Anything coming into your app from a user should be validated before it&rsquo;s passed along to parts of the app that need to use it. There are lots of ways to do this and frameworks to help, but the general idea is to look through the input and allow only characters and character combinations that can&rsquo;t be mistaken for code. &ldquo;Don&rsquo;t trust user input&rdquo; is a helpful, high leverage best practice because it applies to more than just SQL - JavaScript is but one other example.</p>
+			<p>If you find yourself concatenating a variable full of raw user input to pretty much anything, probably stop what you&rsquo;re doing and figure out how to validate the input first.</p>
+			<p>That leads me to my second beginner best practice. Ask for the advice of more experienced folk. The landscape of web security vulnerabilities is constantly changing and it&rsquo;s really hard to know if you&rsquo;re doing the right thing. The right thing might have changed since yesterday.</p>
+
+			<p id="tags">#DBC, #SQLi, #SQLInjection, #DirtyBirds</p>
+		</div>
+
+		<div id="sidebar">
+			<h5>About Gannon</h5>
+			<ul>
+				<p>Some stuff about me. Like, that I'm a graphic designer. And that I'm going to DevBootcamp so I can learn to be a developer too. Also, I like pie. Big deal right? Who <i>doesn't</i> like pie.</p>
+			</ul>		
+			<h5>History</h5>
+			<ul>
+				<li><span class="lightgray">No. 1&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_technical_blog.html" target="_top">A critastic rundown of three sites I dig.</a></li>
+				<li><span class="lightgray">No. 2&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="wireframe_sites.html" target="_top">Wireframe exercise.</a></li>
+				<li><span class="lightgray">No. 3&nbsp;&nbsp;&nbsp;| 04.27.2014 |</span><br><a href="week1_cultural_blog.html" target="_top">Culture and values.</a></li>
+				<li><span class="lightgray">No. 4&nbsp;&nbsp;&nbsp;| 05.04.2014 |</span><br><a href="week2_technical.html" target="_top">Classes vs. IDs</a></li>
+				<li><span class="lightgray">No. 5&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_technical.html" target="_top">Why is JavaScript so popular in Web Development?</a></li>
+				<li><span class="lightgray">No. 6&nbsp;&nbsp;&nbsp;| 05.11.2014 |</span><br><a href="week3_cultural_blog.html" target="_top">My response to Shereef's Fireside Chat.</a></li>
+				<li><span class="lightgray">No. 7&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_technical.html" target="_top">Enumerable#cycle</a></li>
+				<li><span class="lightgray">No. 8&nbsp;&nbsp;&nbsp;| 05.20.2014 |</span><br><a href="week4_cultural_blog.html" target="_top">Dealing with Conflict</a></li>
+				<li><span class="lightgray">No. 9&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_technical.html" target="_top">Modeling Stuff Using Ruby Classes.</a></li>
+				<li><span class="lightgray">No. 10&nbsp;&nbsp;&nbsp;| 05.28.2014 |</span><br><a href="week5_cultural_blog.html" target="_top">Breaking Up the Sausagefest.</a></li>
+				<li><span class="lightgray">No. 11&nbsp;&nbsp;&nbsp;| 06.03.2014 |</span><br><a href="week6_technical.html" target="_top">Functional OOP.</a></li>
+				<li><span class="lightgray">No. 12&nbsp;&nbsp;&nbsp;| 06.03.2014 |</span><br><a href="week6_cultural_blog.html" target="_top">Stereotype Threat.</a></li>
+				<li><span class="lightgray">No. 13&nbsp;&nbsp;&nbsp;| 06.06.2014 |</span><br><a href="week7_technical.html" target="_top">SQL Injections.</a></li>
+				<li><span class="lightgray">No. 14&nbsp;&nbsp;&nbsp;| 06.06.2014 |</span><br><a href="week7_cultural_blog.html" target="_top">Stuart Smalley FTW.</a></li>
+
+			</ul>
+		</div>
+
+		<div id="footer">
+			<p>Thanks for reading!&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;Contact info could go here I suppose.&nbsp;&nbsp;&nbsp;<span class="lightgray">|</span>&nbsp;&nbsp;&nbsp;<a href="http://gannoncurran.com/" target="_blank">gannoncurran.com</a></p>
+		</div>
+
+	</div>
+
+</body>
+</html>
